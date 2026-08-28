@@ -9,7 +9,7 @@
 --gold: #d6a84f;
 --gold-light: #efc873;
 --cream: #f8f4ed;
---white: #fff;
+--white: #ffffff;
 --text: #29241f;
 --muted: #766f67;
 --border: #e7ded1;
@@ -24,14 +24,12 @@ font-family: "DM Sans", sans-serif;
 color: var(--text);
 line-height: 1.6;
 overflow-x: hidden;
-background: var(--white);
 }
 
 img {
 display: block;
 width: 100%;
 max-width: 100%;
-height: 100%;
 object-fit: cover;
 }
 
@@ -49,12 +47,10 @@ font: inherit;
 
 .container {
 width: min(1160px, 90%);
-margin: auto;
+margin: 0 auto;
 }
 
-/* =========================
-HEADER
-========================= */
+/* ================= HEADER ================= */
 
 .header {
 min-height: 760px;
@@ -69,9 +65,7 @@ linear-gradient(120deg, #100e0c, #1d1814);
 overflow: hidden;
 }
 
-/* =========================
-NAVBAR
-========================= */
+/* ================= NAVBAR ================= */
 
 .navbar {
 height: 92px;
@@ -89,7 +83,7 @@ white-space: nowrap;
 
 .logo span {
 display: block;
-font: 600 8px "DM Sans", sans-serif;
+font: 600 8px "DM Sans";
 letter-spacing: 4px;
 text-align: center;
 color: #fff;
@@ -123,6 +117,7 @@ font-weight: 600;
 font-size: 13px;
 border: 1px solid transparent;
 transition: 0.3s;
+white-space: nowrap;
 }
 
 .nav-cta,
@@ -134,7 +129,6 @@ color: #17120c;
 .nav-cta:hover,
 .btn-gold:hover {
 background: var(--gold-light);
-transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -143,34 +137,26 @@ color: #fff;
 }
 
 .btn-outline:hover {
-border-color: var(--gold-light);
+border-color: var(--gold);
 color: var(--gold-light);
 }
 
-.menu-btn {
-display: none;
-background: none;
-border: 0;
-color: #fff;
-font-size: 25px;
-cursor: pointer;
-}
-
-/* =========================
-HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero {
 min-height: 668px;
 display: grid;
-grid-template-columns: 1fr 1fr;
+grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
 align-items: center;
-gap: 50px;
+gap: 70px;
 }
 
 .hero-content {
-min-width: 0;
+width: 100%;
+max-width: 590px;
+justify-self: start;
 text-align: left;
+padding-left: 0;
 }
 
 .eyebrow {
@@ -207,7 +193,6 @@ font-size: 15px;
 display: flex;
 gap: 12px;
 flex-wrap: wrap;
-justify-content: flex-start;
 }
 
 .hero-image {
@@ -222,12 +207,10 @@ border: 1px solid rgba(214, 168, 79, 0.3);
 width: 100%;
 height: 100%;
 object-fit: cover;
-object-position: center 35%;
+object-position: center center;
 }
 
-/* =========================
-SECTIONS
-========================= */
+/* ================= SECTIONS ================= */
 
 .section {
 padding: 110px 0;
@@ -239,25 +222,12 @@ line-height: 1.12;
 margin-bottom: 22px;
 }
 
-.section-heading {
-text-align: center;
-max-width: 700px;
-margin: 0 auto 50px;
-}
-
-.about-content > p:not(.eyebrow),
-.section-heading p:last-child {
-color: var(--muted);
-}
-
-/* =========================
-ABOUT
-========================= */
+/* ================= ABOUT ================= */
 
 .about {
 display: grid;
-grid-template-columns: 1.05fr 0.95fr;
-gap: 90px;
+grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+gap: 80px;
 align-items: center;
 }
 
@@ -265,18 +235,9 @@ align-items: center;
 min-width: 0;
 }
 
-.about-image {
-width: 100%;
-height: 395px;
-border-radius: 8px;
-overflow: hidden;
-}
-
-.about-image img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-object-position: center 35%;
+.about-content > p:not(.eyebrow),
+.section-heading p:last-child {
+color: var(--muted);
 }
 
 .features {
@@ -302,13 +263,31 @@ font-weight: 700;
 font-size: 13px;
 }
 
-/* =========================
-SERVICES
-========================= */
+.about-image {
+width: 100%;
+height: 395px;
+border-radius: 8px;
+overflow: hidden;
+}
+
+.about-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center center;
+}
+
+/* ================= SERVICES ================= */
 
 .services,
 .pricing {
 background: var(--cream);
+}
+
+.section-heading {
+text-align: center;
+max-width: 700px;
+margin: 0 auto 50px;
 }
 
 .service-grid {
@@ -318,10 +297,10 @@ gap: 18px;
 }
 
 .service-card {
+min-width: 0;
 background: #fff;
 border: 1px solid var(--border);
 overflow: hidden;
-min-width: 0;
 transition: 0.35s;
 }
 
@@ -333,7 +312,7 @@ transform: translateY(-8px);
 width: 100%;
 height: 220px;
 object-fit: cover;
-object-position: center 35%;
+object-position: center center;
 }
 
 .card-body {
@@ -350,9 +329,7 @@ font-size: 13px;
 margin: 8px 0 16px;
 }
 
-/* =========================
-GALERIE
-========================= */
+/* ================= GALERIE ================= */
 
 .filters {
 display: flex;
@@ -393,12 +370,15 @@ border-radius: 6px;
 width: 100%;
 height: 100%;
 object-fit: cover;
-object-position: center 35%;
+object-position: center center;
+transition: transform 0.4s;
 }
 
-/* =========================
-TARIFS
-========================= */
+.gallery-item:hover img {
+transform: scale(1.04);
+}
+
+/* ================= TARIFS ================= */
 
 .price-grid {
 display: grid;
@@ -428,7 +408,6 @@ background: var(--gold);
 padding: 5px 14px;
 font-size: 10px;
 font-weight: 700;
-white-space: nowrap;
 }
 
 .price-card h3 {
@@ -441,7 +420,7 @@ margin: 18px 0 5px;
 }
 
 .price small {
-font: 600 11px "DM Sans", sans-serif;
+font: 600 11px "DM Sans";
 }
 
 .price-card p {
@@ -454,9 +433,11 @@ color: var(--text);
 border-color: #bbb;
 }
 
-/* =========================
-CONTACT
-========================= */
+/* ================= CONTACT ================= */
+
+.contact {
+width: min(1160px, 90%);
+}
 
 .contact-box {
 width: 100%;
@@ -464,26 +445,32 @@ background: var(--black);
 color: #fff;
 padding: 65px;
 border-radius: 8px;
+
+```
 display: grid;
-grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-gap: 70px;
-align-items: start;
+grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+gap: 80px;
+
+align-items: center;
+```
+
 }
 
-.contact-box > div {
+.contact-content {
 min-width: 0;
 }
 
 .contact-box > div p:not(.eyebrow) {
 color: #bdb4aa;
+max-width: 450px;
 }
 
-.contact-box form {
-width: 100%;
-min-width: 0;
+.contact-box h2 {
+margin-bottom: 20px;
 }
 
 form {
+width: 100%;
 display: grid;
 gap: 12px;
 }
@@ -500,19 +487,28 @@ outline: none;
 border-radius: 3px;
 }
 
+textarea {
+resize: vertical;
+min-height: 120px;
+}
+
+input::placeholder,
+textarea::placeholder {
+color: #8e857c;
+}
+
 input:focus,
 select:focus,
 textarea:focus {
 border-color: var(--gold);
 }
 
-textarea {
-resize: vertical;
+form .btn {
+width: 100%;
+cursor: pointer;
 }
 
-/* =========================
-FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer {
 background: #0e0c0a;
@@ -536,9 +532,18 @@ font-size: 12px;
 color: var(--gold);
 }
 
-/* =========================
-TOAST
-========================= */
+/* ================= MENU MOBILE ================= */
+
+.menu-btn {
+display: none;
+background: none;
+border: 0;
+color: #fff;
+font-size: 25px;
+cursor: pointer;
+}
+
+/* ================= TOAST ================= */
 
 .toast {
 position: fixed;
@@ -559,9 +564,7 @@ transform: translateY(0);
 opacity: 1;
 }
 
-/* =========================
-ANIMATION
-========================= */
+/* ================= ANIMATION ================= */
 
 .reveal {
 opacity: 0;
@@ -574,311 +577,229 @@ opacity: 1;
 transform: none;
 }
 
-/* =========================
-TABLETTE
-========================= */
+/* ================= TABLETTE ================= */
 
 @media (max-width: 900px) {
 
+```
 .container {
-width: 92%;
+    width: 92%;
 }
 
 .navbar {
-height: 85px;
+    height: 82px;
 }
 
 .nav-links {
-position: absolute;
-top: 85px;
-left: 0;
-width: 100%;
-background: var(--black);
-padding: 25px 5%;
-flex-direction: column;
-gap: 18px;
-display: none;
-z-index: 20;
+    position: absolute;
+    top: 82px;
+    left: 0;
+    width: 100%;
+    background: var(--black);
+    padding: 25px 5%;
+    flex-direction: column;
+    display: none;
+    z-index: 50;
 }
 
 .nav-links.open {
-display: flex;
+    display: flex;
 }
 
 .menu-btn {
-display: block;
-margin-left: auto;
+    display: block;
+    margin-left: auto;
 }
 
 .nav-cta {
-display: none;
+    display: none;
 }
 
-/* HERO TABLETTE */
 
 .hero {
-grid-template-columns: 1fr;
-min-height: auto;
-padding-top: 50px;
-padding-bottom: 70px;
-gap: 40px;
-}
-
-.hero-image {
-order: 1;
-height: 430px;
-max-width: 650px;
-margin: 0 auto;
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding-top: 50px;
+    padding-bottom: 70px;
 }
 
 .hero-content {
-order: 2;
-text-align: left;
-width: 100%;
-}
-
-.hero-text {
-margin-left: 0;
-margin-right: 0;
-}
-
-.hero-buttons {
-justify-content: flex-start;
-}
-
-/* ABOUT */
-
-.about {
-grid-template-columns: 1fr;
-gap: 45px;
-}
-
-.about-image {
-height: 380px;
-max-width: 700px;
-margin: 0 auto;
-}
-
-/* SERVICES */
-
-.service-grid {
-grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.service-card img {
-height: 250px;
-}
-
-/* GALLERY */
-
-.gallery-grid {
-grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.gallery-item {
-height: 280px;
-}
-
-/* PRICING */
-
-.price-grid {
-grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: 12px;
-}
-
-.price-card {
-padding: 35px 18px;
-}
-
-.price {
-font-size: 32px;
-}
-
-/* CONTACT */
-
-.contact-box {
-grid-template-columns: 1fr;
-gap: 35px;
-padding: 45px;
-}
-}
-
-/* =========================
-TELEPHONE
-========================= */
-
-@media (max-width: 600px) {
-
-.container {
-width: 92%;
-}
-
-.header {
-min-height: auto;
-}
-
-.navbar {
-height: 75px;
-}
-
-.nav-links {
-top: 75px;
-}
-
-.logo {
-font-size: 22px;
-}
-
-/* HERO */
-
-.hero {
-padding-top: 35px;
-padding-bottom: 55px;
-gap: 30px;
+    max-width: 700px;
+    justify-self: start;
 }
 
 .hero-image {
-height: 330px;
-border-radius: 120px 120px 8px 8px;
+    order: -1;
+    height: 430px;
 }
 
-.hero-content {
-text-align: left;
-}
-
-.hero h1 {
-font-size: 43px;
-}
-
-.hero-text {
-font-size: 14px;
-margin: 20px 0 25px;
-}
-
-.hero-buttons {
-justify-content: flex-start;
-}
-
-/* SECTIONS */
-
-.section {
-padding: 75px 0;
-}
-
-h2 {
-font-size: 36px;
-}
-
-.section-heading {
-margin-bottom: 38px;
-}
-
-/* ABOUT */
 
 .about {
-gap: 35px;
+    grid-template-columns: 1fr;
+    gap: 45px;
 }
 
 .about-image {
-height: 330px;
+    height: 400px;
 }
 
-.features {
-grid-template-columns: 1fr;
-gap: 18px;
-margin: 25px 0;
-}
-
-/* SERVICES */
 
 .service-grid {
-grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.service-card img {
-height: 290px;
-}
-
-/* GALLERY */
 
 .gallery-grid {
-grid-template-columns: repeat(2, minmax(0, 1fr));
-gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.gallery-item {
-height: 220px;
-}
-
-/* PRICING */
 
 .price-grid {
-grid-template-columns: 1fr;
-gap: 18px;
-}
-
-.price-card {
-padding: 35px 25px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .price-card.featured {
-transform: none;
+    transform: none;
 }
 
-/* CONTACT */
 
 .contact-box {
-padding: 30px 20px;
-gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 45px;
+}
+```
+
 }
 
-.contact-box form {
-width: 100%;
+/* ================= TELEPHONE ================= */
+
+@media (max-width: 600px) {
+
+```
+.container,
+.contact {
+    width: 92%;
 }
 
-/* FOOTER */
-
-.footer-inner {
-flex-direction: column;
-text-align: center;
+.header {
+    min-height: auto;
 }
 
-/* TOAST */
-
-.toast {
-left: 15px;
-right: 15px;
-bottom: 15px;
-}
+.navbar {
+    height: 75px;
 }
 
-/* =========================
-PETITS TELEPHONES
-========================= */
+.nav-links {
+    top: 75px;
+}
 
-@media (max-width: 380px) {
+
+.hero {
+    min-height: auto;
+    padding-top: 35px;
+    padding-bottom: 60px;
+    gap: 35px;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+}
 
 .hero h1 {
-font-size: 37px;
+    font-size: 42px;
+}
+
+.hero-text {
+    font-size: 14px;
 }
 
 .hero-image {
-height: 300px;
+    height: 330px;
+    border-radius: 150px 150px 8px 8px;
 }
+
+
+.section {
+    padding: 75px 0;
+}
+
+h2 {
+    font-size: 38px;
+}
+
+
+.features {
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+
+.service-grid,
+.price-grid {
+    grid-template-columns: 1fr;
+}
+
 
 .service-card img {
-height: 260px;
+    height: 260px;
 }
 
+
 .gallery-grid {
-grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
 }
 
 .gallery-item {
-height: 300px;
+    height: 220px;
+}
+
+
+.contact-box {
+    padding: 30px 20px;
+    gap: 30px;
+}
+
+.contact-box h2 {
+    font-size: 35px;
+}
+
+
+.footer-inner {
+    flex-direction: column;
+    text-align: center;
+}
+```
+
+}
+
+/* ================= PETITS TELEPHONES ================= */
+
+@media (max-width: 380px) {
+
+```
+.hero h1 {
+    font-size: 36px;
+}
+
+.hero-image {
+    height: 300px;
+}
+
+.gallery-grid {
+    grid-template-columns: 1fr;
+}
+
+.gallery-item {
+    height: 300px;
 }
 
 .contact-box {
-padding: 25px 16px;
+    padding: 25px 16px;
 }
+```
+
 }
